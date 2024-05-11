@@ -8,9 +8,9 @@ const form = document.getElementById("form");
 const search = document.getElementById("query");
 
 returnMovies(APILINK)
-function returnMovies(url){
+async function returnMovies(url){
   fetch(url).then(res => res.json())
-  .then(function(data){
+  .then(await function(data){
   console.log(data.results);
   data.results.forEach(element => {
       const div_card = document.createElement('div');
